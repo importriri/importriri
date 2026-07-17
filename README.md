@@ -17,9 +17,13 @@ bugs as much as the wins. **Verify, don't trust.**
   test-driven Arch installer that lays the encrypted foundation the lab
   stands on: LUKS2, Btrfs, Secure Boot, `linux-hardened`. Every destructive
   step is guarded and tested against loop devices before it touches a disk.
+- 🧱 **[privatestack-ansible](https://github.com/importriri/privatestack-ansible)**
+  — the Ansible bricks that assemble the lab on the bootstrapped host: one
+  brick per job, discovery-driven CI, invariant tests that pin every bug
+  already paid for. Published stage by stage.
 
 Three repos, one system: **arch-bootstrap** installs the encrypted base,
-**privatestack-ansible** *(in progress)* is the Ansible bricks that build the
+**privatestack-ansible** is the Ansible bricks that build the
 lab on top of it — the core bricks plus optional ones to bolt on more
 services — and **arch-hypervisor-lab** is the writeup that ties it together:
 how to drive Ansible to build it, the real hardware problems, the setup.
