@@ -12,7 +12,9 @@ bugs as much as the wins. **Verify, don't trust.**
 - 🖥️ **[arch-hypervisor-lab](https://github.com/importriri/arch-hypervisor-lab)**
   — a four-domain GPU-passthrough hypervisor on a single laptop: clean
   gaming, dirty gaming, dev, and an air-gapped malware lab. Includes a
-  laptop-specific VFIO freeze bug that took ~2 months to solve.
+  laptop-specific VFIO freeze bug that took ~2 months to solve — and the
+  Looking Glass setup with **no dummy plug** (the only port wired to the
+  dGPU is broken), three writeups of failure included.
 - 🧰 **[arch-bootstrap](https://github.com/importriri/arch-bootstrap)** — the
   test-driven Arch installer that lays the encrypted foundation the lab
   stands on: LUKS2, Btrfs, Secure Boot, `linux-hardened`. Every destructive
@@ -28,9 +30,16 @@ lab on top of it — the core bricks plus optional ones to bolt on more
 services — and **arch-hypervisor-lab** is the writeup that ties it together:
 how to drive Ansible to build it, the real hardware problems, the setup.
 
-**Also shipped:** [AutoFillSuite](https://github.com/importriri/AutoFillSuite)
-— a Java/Swing desktop tool (`java.awt.Robot`) running in production at my
-workplace, automating barcode-driven web form filling.
+**Also shipped — two zero-dependency Java/Swing tools for the shop floor I
+work on:**
+
+- **[AutoFillSuite](https://github.com/importriri/AutoFillSuite)** — drives an
+  API-less supplier portal with `java.awt.Robot` and verifies every run
+  against the portal's own CSV export. In daily production use.
+- **[etichette-custom](https://github.com/importriri/etichette-custom)** —
+  designs, serializes and prints QR labels on a Datamax thermal printer.
+  The QR encoder is written from scratch and proven with 576/576 round-trips
+  against two independent decoders.
 
 **Where this is going**
 
