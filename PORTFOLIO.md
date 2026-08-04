@@ -52,8 +52,9 @@ services    private service VMs
 ```
 
 Only the four workload domains may receive the dGPU. The services domain does
-not take part in GPU rotation. The host uses the iGPU and remains headless
-unless the optional Sway desktop is installed.
+not take part in GPU rotation. The host uses the iGPU for the required Sway
+desktop, and the Looking Glass host transport is reconciled after that desktop.
+The headless foundation remains a recovery stage, not the normal laptop target.
 
 ### Problems that changed the implementation
 
@@ -72,9 +73,12 @@ teardown.
 
 ### Current public state
 
-The public `main` branches contain the installer, host foundation, desktop and
-Looking Glass host transport. VM lifecycle, image sealing, Windows image work
-and service roles remain local until their hardware checks are complete.
+The public `main` branches contain the installer, complete laptop host target,
+image factory, explicit VM lifecycle and service registration and configuration
+roles. Windows guest preparation remains a documented manual step. The Nitro
+bootstrap-to-stage-2 host path has reproduced immediate `changed=0`; full
+pipeline compatibility remains pending until the frozen clean-install,
+guest-cycle and shared-memory capture evidence is complete.
 
 ## AutoFillSuite
 

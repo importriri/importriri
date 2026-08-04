@@ -25,13 +25,15 @@ base install        host configuration        documentation and test records
   encrypted Arch base with Btrfs, systemd-boot, Secure Boot and
   `linux-hardened`.
 - [`privatestack-ansible`](https://github.com/importriri/privatestack-ansible)
-  configures KVM, five network domains, nftables isolation, VFIO and the
-  optional Sway/Looking Glass desktop.
+  configures KVM, five network domains, nftables isolation, VFIO, the required
+  Sway desktop and the Looking Glass host transport in that order.
 - [`arch-hypervisor-lab`](https://github.com/importriri/arch-hypervisor-lab)
   contains the setup notes, hardware matrix and failure investigations.
 
-The public repositories contain the tested foundation. Later VM lifecycle and
-service work stays local until the remaining Nitro and Predator checks pass.
+The public repositories contain the tested bootstrap-to-host path, image
+factory and explicit VM and service lifecycle transactions. Full compatibility
+remains pending until the frozen clean-install, guest-cycle and Looking Glass
+capture evidence is complete on Nitro and Predator.
 
 ### AutoFillSuite
 
